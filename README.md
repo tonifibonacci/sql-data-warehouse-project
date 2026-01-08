@@ -1,7 +1,7 @@
 # sql-data-warehouse-project
 Build a modern data warehouse with SQL Server, including ETL processes, data modelling and analytics.
 
-##Overview
+## Overview
 
 This project demonstrates the implementation of a modern SQL Server–based data warehouse using a layered Bronze–Silver–Gold architecture to support reliable analytics, business intelligence, and downstream use cases such as ad-hoc analysis and machine learning.
 
