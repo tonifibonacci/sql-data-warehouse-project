@@ -1,0 +1,37 @@
+/*
+============================================================
+🚧 Data Warehouse Initialization Script
+============================================================
+
+📌 Purpose:
+    This script resets the data warehouse environment by:
+    - Dropping the existing 'DataWarehouse' database if it exists
+    - Creating a fresh database named 'Warehouse'
+    - Setting up three schemas: 'bronze', 'silver', and 'gold'
+      following the medallion architecture pattern
+
+⚠️ WARNING:
+    Executing this script will permanently delete the existing 'DataWarehouse' database.
+    All data, objects, and configurations will be lost.
+    Ensure you have valid backups and understand the impact before proceeding.
+*/
+
+-- Create Database
+
+IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DataWarehouse')
+BEGIN
+	ALTER DATABASE Datawarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+	DROP DATABASE DataWarehouse;
+END;
+GO
+CREATE DATABASE Warehouse;
+
+
+--Create Schemas
+GO
+CREATE SCHEMA bronze
+GO
+CREATE SCHEMA silver
+GO
+CREATE SCHEMA gold
+GO
